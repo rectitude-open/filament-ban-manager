@@ -1,10 +1,11 @@
 {
     "name": "rectitude-open/filament-ban-manager",
-    "description": "This is my package filament-ban-manager",
+    "description": "A Ban Manager for Filament",
     "keywords": [
-        "rectitude-open",
         "laravel",
-        "filament-ban-manager"
+        "filament",
+        "ban",
+        "security"
     ],
     "homepage": "https://github.com/rectitude-open/filament-ban-manager",
     "support": {
@@ -22,6 +23,7 @@
     "require": {
         "php": "^8.1",
         "filament/filament": "^3.0",
+        "mchev/banhammer": "^2.4",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
@@ -66,10 +68,7 @@
         "laravel": {
             "providers": [
                 "Rectitudeopen\\FilamentBanManager\\FilamentBanManagerServiceProvider"
-            ],
-            "aliases": {
-                "FilamentBanManager": "Rectitudeopen\\FilamentBanManager\\Facades\\FilamentBanManager"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

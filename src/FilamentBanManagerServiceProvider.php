@@ -35,8 +35,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
-                    ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('rectitude-open/filament-ban-manager');
+                    ->askToRunMigrations();
             });
 
         $configFileName = $package->shortName();
@@ -52,13 +51,11 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         if (file_exists($package->basePath('/../resources/lang'))) {
             $package->hasTranslations();
         }
-
-        if (file_exists($package->basePath('/../resources/views'))) {
-            $package->hasViews(static::$viewNamespace);
-        }
     }
 
-    public function packageRegistered(): void {}
+    public function packageRegistered(): void
+    {
+    }
 
     public function packageBooted(): void
     {
@@ -86,7 +83,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentBanManager);
+        Testable::mixin(new TestsFilamentBanManager());
     }
 
     protected function getAssetPackageName(): ?string
