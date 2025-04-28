@@ -17,7 +17,7 @@ class BanResource extends Resource
 {
     public static function getModel(): string
     {
-        return config('ban-manager.model');
+        return config('ban-manager.model', \Mchev\Banhammer\Models\Ban::class);
     }
 
     protected static ?string $navigationIcon = 'heroicon-o-shield-exclamation';
