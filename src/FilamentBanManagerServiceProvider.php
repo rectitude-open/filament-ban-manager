@@ -143,7 +143,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_filament-ban-manager_table',
+            'create_bans_table.php',
         ];
     }
 }
