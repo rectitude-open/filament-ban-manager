@@ -1,13 +1,13 @@
 <?php
 
-namespace VendorName\Skeleton\Testing;
+namespace Rectitudeopen\FilamentBanManager\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 
 /**
  * @mixin Testable
  */
-class TestsSkeleton
+class TestsFilamentBanManager
 {
     //
 }

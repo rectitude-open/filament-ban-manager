@@ -1,20 +1,23 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Rectitudeopen\FilamentBanManager;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class FilamentBanManagerPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'filament-ban-manager';
     }
 
     public function register(Panel $panel): void
     {
-        //
+        $panel
+            ->resources([
+                // PostResource::class,
+            ]);
     }
 
     public function boot(Panel $panel): void
