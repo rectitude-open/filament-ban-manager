@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.2](https://github.com/rectitude-open/filament-ban-manager/compare/v1.2.1...v1.2.2) (2025-04-28)
+
+
+### Bug Fixes
+
+* set default model for BanResource if not configured ([42c168e](https://github.com/rectitude-open/filament-ban-manager/commit/42c168ee5850f9a6b2b738ae7362adb4648b2fe0))
+* simplify condition for Laravel Pint Check to exclude GitHub Actions bot ([77c4c4f](https://github.com/rectitude-open/filament-ban-manager/commit/77c4c4f16028bda034b21fbfb3cc95c20e0eb4ec))
+
 ## [1.2.1](https://github.com/rectitude-open/filament-ban-manager/compare/v1.2.0...v1.2.1) (2025-04-28)
 
 
