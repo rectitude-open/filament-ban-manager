@@ -10,7 +10,7 @@ jobs:
   php-code-styling:
     if: |
       github.event_name != 'pull_request' ||
-      !contains(join(github.event.pull_request.labels.*.name, ','), 'autorelease: tagged')
+      !contains(join(github.event.pull_request.labels.*.name, ','), 'autorelease: pending')
     runs-on: ubuntu-latest
 
     steps:
