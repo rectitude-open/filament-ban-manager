@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/rectitude-open/filament-ban-manager/compare/v1.2.0...v1.2.1) (2025-04-28)
+
+
+### Bug Fixes
+
+* simplify OS and stability matrix in run-tests workflow ([429979c](https://github.com/rectitude-open/filament-ban-manager/commit/429979c767f6cb69b49224ab80ce7a05d1030919))
+* update condition to exclude 'autorelease: pending' from Laravel Pint Check ([07d39c4](https://github.com/rectitude-open/filament-ban-manager/commit/07d39c4e9a4fb6368f9e6cacb72b0639d44de76d))
+
 ## [1.2.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.1.1...v1.2.0) (2025-04-28)
 
 
