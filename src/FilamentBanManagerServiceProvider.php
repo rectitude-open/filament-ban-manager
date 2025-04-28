@@ -60,15 +60,15 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
     public function packageBooted(): void
     {
         // Asset Registration
-        FilamentAsset::register(
-            $this->getAssets(),
-            $this->getAssetPackageName()
-        );
+        // FilamentAsset::register(
+        //     $this->getAssets(),
+        //     $this->getAssetPackageName()
+        // );
 
-        FilamentAsset::registerScriptData(
-            $this->getScriptData(),
-            $this->getAssetPackageName()
-        );
+        // FilamentAsset::registerScriptData(
+        //     $this->getScriptData(),
+        //     $this->getAssetPackageName()
+        // );
 
         // Icon Registration
         FilamentIcon::register($this->getIcons());
