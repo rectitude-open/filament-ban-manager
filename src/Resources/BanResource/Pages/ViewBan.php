@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
 
-use Filament\Resources\Pages\ViewRecord;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource;
 use Filament\Actions\Action;
+use Filament\Resources\Pages\ViewRecord;
 use Illuminate\Support\Js;
+use Rectitudeopen\FilamentBanManager\Resources\BanResource;
 
 class ViewBan extends ViewRecord
 {
@@ -18,7 +18,7 @@ class ViewBan extends ViewRecord
         return [
             Action::make('cancel')
                 ->label(__('filament-panels::resources/pages/create-record.form.actions.cancel.label'))
-                ->alpineClickHandler('document.referrer ? window.history.back() : (window.location.href = '.Js::from($this->previousUrl ?? static::getResource()::getUrl()).')')
+                ->alpineClickHandler('document.referrer ? window.history.back() : (window.location.href = ' . Js::from($this->previousUrl ?? static::getResource()::getUrl()) . ')')
                 ->color('gray')
                 ->icon('heroicon-o-arrow-left')
                 ->label(__('action.back')),

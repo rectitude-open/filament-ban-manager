@@ -10,11 +10,11 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
+use Rectitudeopen\FilamentBanManager\Commands\FilamentBanManagerCommand;
+use Rectitudeopen\FilamentBanManager\Testing\TestsFilamentBanManager;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Rectitudeopen\FilamentBanManager\Commands\FilamentBanManagerCommand;
-use Rectitudeopen\FilamentBanManager\Testing\TestsFilamentBanManager;
 
 class FilamentBanManagerServiceProvider extends PackageServiceProvider
 {
@@ -53,9 +53,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void
-    {
-    }
+    public function packageRegistered(): void {}
 
     public function packageBooted(): void
     {
@@ -83,7 +81,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentBanManager());
+        Testable::mixin(new TestsFilamentBanManager);
     }
 
     protected function getAssetPackageName(): ?string

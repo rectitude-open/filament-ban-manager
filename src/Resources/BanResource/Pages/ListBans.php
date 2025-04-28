@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
 
-use Rectitudeopen\FilamentBanManager\Resources\BanResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Rectitudeopen\FilamentBanManager\Resources\BanResource;
 
 class ListBans extends ListRecords
 {

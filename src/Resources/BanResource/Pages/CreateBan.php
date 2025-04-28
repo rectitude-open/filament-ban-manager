@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
 
-use Rectitudeopen\FilamentBanManager\Resources\BanResource;
 use Filament\Resources\Pages\CreateRecord;
+use Rectitudeopen\FilamentBanManager\Resources\BanResource;
 
 class CreateBan extends CreateRecord
 {
