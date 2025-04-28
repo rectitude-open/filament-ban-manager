@@ -34,12 +34,14 @@ class UnbanBulkAction extends BulkAction
         $this->action(function (): void {
             $this->process(static function (Collection $records) {
                 $records->each(function (Model $record) {
+                    /** @phpstan-ignore-next-line */
                     if ($record->bannable_type && $record->bannable_id) {
                         $model = $record->bannable_type::find($record->bannable_id);
                         if ($model && method_exists($model, 'unban')) {
                             $model->unban();
                         }
                     } else {
+                        /** @phpstan-ignore-next-line */
                         IP::unban($record->ip);
                     }
                 });
