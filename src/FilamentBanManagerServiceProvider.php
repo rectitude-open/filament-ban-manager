@@ -53,7 +53,9 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void {}
+    public function packageRegistered(): void
+    {
+    }
 
     public function packageBooted(): void
     {
@@ -81,7 +83,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentBanManager);
+        Testable::mixin(new TestsFilamentBanManager());
     }
 
     protected function getAssetPackageName(): ?string
@@ -96,8 +98,8 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('filament-ban-manager', __DIR__ . '/../resources/dist/components/filament-ban-manager.js'),
-            Css::make('filament-ban-manager-styles', __DIR__ . '/../resources/dist/filament-ban-manager.css'),
-            Js::make('filament-ban-manager-scripts', __DIR__ . '/../resources/dist/filament-ban-manager.js'),
+            // Css::make('filament-ban-manager-styles', __DIR__ . '/../resources/dist/filament-ban-manager.css'),
+            // Js::make('filament-ban-manager-scripts', __DIR__ . '/../resources/dist/filament-ban-manager.js'),
         ];
     }
 
