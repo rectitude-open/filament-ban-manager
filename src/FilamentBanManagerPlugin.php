@@ -4,6 +4,7 @@ namespace Rectitudeopen\FilamentBanManager;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Rectitudeopen\FilamentBanManager\Resources\BanResource;
 
 class FilamentBanManagerPlugin implements Plugin
 {
@@ -16,7 +17,7 @@ class FilamentBanManagerPlugin implements Plugin
     {
         $panel
             ->resources([
-                // PostResource::class,
+                BanResource::class,
             ]);
     }
 
