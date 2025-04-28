@@ -9,20 +9,22 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Mchev\Banhammer\Models\Ban;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
 
 class BanResource extends Resource
 {
-    protected static ?string $model = Ban::class;
+    public static function getModel(): string
+    {
+        return config('ban-manager.model');
+    }
 
     protected static ?string $navigationIcon = 'heroicon-o-shield-exclamation';
 
     public static function getNavigationSort(): ?int
     {
-        return 0;
+        return config('ban-manager.navigation_sort');
     }
 
     public static function getNavigationLabel(): string
