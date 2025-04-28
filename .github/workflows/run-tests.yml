@@ -1,10 +1,10 @@
-name: run-tests
+name: Run Tests
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_run:
+    workflows: ["PHPStan Check"]
+    types:
+      - completed
 
 jobs:
   test:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest]
-        php: [8.2, 8.1]
+        php: [8.2, 8.3]
         laravel: [10.*]
         stability: [prefer-lowest, prefer-stable]
         include:

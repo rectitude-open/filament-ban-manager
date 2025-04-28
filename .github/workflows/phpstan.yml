@@ -1,10 +1,10 @@
-name: PHPStan
+name: PHPStan Check
 
 on:
-  push:
-    paths:
-      - '**.php'
-      - 'phpstan.neon.dist'
+  workflow_run:
+    workflows: ["Laravel Pint Check"]
+    types:
+      - completed
 
 jobs:
   phpstan:
