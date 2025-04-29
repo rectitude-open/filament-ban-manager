@@ -12,19 +12,20 @@ use Filament\Tables\Table;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
+use Rectitudeopen\FilamentBanManager\Models\Ban;
 
 class BanResource extends Resource
 {
     public static function getModel(): string
     {
-        return config('ban-manager.model', \Mchev\Banhammer\Models\Ban::class);
+        return config('filament-ban-manager.model', Ban::class);
     }
 
     protected static ?string $navigationIcon = 'heroicon-o-shield-exclamation';
 
     public static function getNavigationSort(): ?int
     {
-        return config('ban-manager.navigation_sort');
+        return config('filament-ban-manager.navigation_sort', 0);
     }
 
     public static function getNavigationLabel(): string
