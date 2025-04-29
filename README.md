@@ -6,7 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/rectitude-open/filament-ban-manager.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-ban-manager)
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Filament Ban Manager is a user-friendly plugin that provides complete ban management (both models and IPs) for your Filament panel, built on top of the [Banhammer](https://github.com/mchev/banhammer) package.
 
 ## Installation
 
@@ -22,6 +22,7 @@ You can publish and run the migrations with:
 php artisan vendor:publish --tag="filament-ban-manager-migrations"
 php artisan migrate
 ```
+> Note: The migrations from the Banhammer package have been integrated and optimized in this plugin, so you do not need to publish Banhammer's migrations separately.
 
 You can publish the config file with:
 
@@ -29,31 +30,46 @@ You can publish the config file with:
 php artisan vendor:publish --tag="filament-ban-manager-config"
 ```
 
-Optionally, you can publish the views using
+Optionally, you can publish the config file of the Banhammer package:
 
 ```bash
-php artisan vendor:publish --tag="filament-ban-manager-views"
+php artisan vendor:publish --provider="Mchev\Banhammer\BanhammerServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+    'filament_resource' => RectitudeOpen\FilamentBanManager\Resources\BanResource::class,
+    'model' => RectitudeOpen\FilamentBanManager\Models\Ban::class,
+    'navigation_sort' => 0,
 ];
 ```
 
 ## Usage
 
+The package provides a Ban resource that allows you to create and delete bans for both models and IP addresses.
+
+To use the resource page provided by this package, you need to register it in your Panel Provider provider first.
+
 ```php
-$filamentBanManager = new Rectitudeopen\FilamentBanManager();
-echo $filamentBanManager->echoPhrase('Hello, Rectitudeopen!');
+namespace App\Providers\Filament;
+
+use RectitudeOpen\FilamentBanManager\FilamentBanManagerPlugin;
+
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ->plugins([
+                FilamentBanManagerPlugin::make()
+            ]);
+    }
+}    
 ```
 
-## Testing
-
-```bash
-composer test
-```
+For more advanced ban features, please refer to the documentation of the [Banhammer](https://github.com/mchev/banhammer) package.
 
 ## Changelog
 
@@ -69,7 +85,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [rectitude-open](https://github.com/rectitude-open)
+- [Aspirant Zhang](https://github.com/aspirantzhang)
 - [All Contributors](../../contributors)
 
 ## License
