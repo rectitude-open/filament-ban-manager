@@ -66,11 +66,25 @@ class BanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('bannable_type'),
-                Tables\Columns\TextColumn::make('bannable_id'),
-                Tables\Columns\TextColumn::make('created_by_type'),
-                Tables\Columns\TextColumn::make('created_by_id'),
+                Tables\Columns\TextColumn::make('bannable_type')
+                    ->label('Bannable Type')
+                    ->searchable()
+                    ->toggleable(true)
+                    ->default('IP')
+                    ->formatStateUsing(function ($state) {
+                        return $state ? class_basename($state) : 'IP';
+                    }),
+                Tables\Columns\TextColumn::make('bannable_id')
+                    ->label('Bannable ID')
+                    ->toggleable(true),
+                Tables\Columns\TextColumn::make('created_by_id')
+                    ->label('Created by')
+                    ->searchable()
+                    ->formatStateUsing(function ($record) {
+                        return $record->createdBy->name ?? '-';
+                    }),
                 Tables\Columns\TextColumn::make('ip')
+                    ->label('IP')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('expired_at')
                     ->dateTime(),
