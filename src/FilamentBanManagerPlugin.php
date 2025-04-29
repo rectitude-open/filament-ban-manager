@@ -17,7 +17,7 @@ class FilamentBanManagerPlugin implements Plugin
     {
         $panel
             ->resources([
-                BanResource::class,
+                config('filament-ban-manager.filament_resource', BanResource::class),
             ]);
     }
 

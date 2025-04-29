@@ -53,9 +53,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void
-    {
-    }
+    public function packageRegistered(): void {}
 
     public function packageBooted(): void
     {
@@ -83,7 +81,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentBanManager());
+        Testable::mixin(new TestsFilamentBanManager);
     }
 
     protected function getAssetPackageName(): ?string
