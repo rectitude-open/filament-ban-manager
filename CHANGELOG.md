@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.2.2...v1.3.0) (2025-04-29)
+
+
+### Features
+
+* support support for dynamic filament resource ([c2870e9](https://github.com/rectitude-open/filament-ban-manager/commit/c2870e98e29978d9bcc52289681939fae2585a35))
+
+
+### Bug Fixes
+
+* add export-ignore for filament-ban-manager-docker and dev directories ([8dfb206](https://github.com/rectitude-open/filament-ban-manager/commit/8dfb206678bdc322e2ae01414ce0dda401cc3e10))
+* improve packageRegistered method and correct migration filename format ([d62ba38](https://github.com/rectitude-open/filament-ban-manager/commit/d62ba38305fe8121a1d33ec60464ae6938d18475))
+* rename configuration file ([da03a1f](https://github.com/rectitude-open/filament-ban-manager/commit/da03a1f18f30c2a08ca05c7d72cbc8e08854bbaf))
+* update workflow names for consistency and improve PHPStan level ([e900611](https://github.com/rectitude-open/filament-ban-manager/commit/e90061134b40c8c7b38253b4c599d7f276a64f66))
+
 ## [1.2.2](https://github.com/rectitude-open/filament-ban-manager/compare/v1.2.1...v1.2.2) (2025-04-28)
 
 
