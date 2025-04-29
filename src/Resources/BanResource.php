@@ -9,10 +9,10 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Rectitudeopen\FilamentBanManager\Models\Ban;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
 use Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
-use Rectitudeopen\FilamentBanManager\Models\Ban;
 
 class BanResource extends Resource
 {
