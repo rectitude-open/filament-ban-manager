@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.4.0...v1.5.0) (2025-04-29)
+
+
+### Features
+
+* use config for table name in create_bans_table migration ([d9867d4](https://github.com/rectitude-open/filament-ban-manager/commit/d9867d41c337c7b920e99816833c0e5c3b562889))
+
+
+### Bug Fixes
+
+* workflow job name ([71b0cda](https://github.com/rectitude-open/filament-ban-manager/commit/71b0cdaef2115316fc2be2e1b2fab0a69a1454ac))
+
 ## [1.4.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.3.0...v1.4.0) (2025-04-29)
 
 
