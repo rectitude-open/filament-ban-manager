@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.5.0...v1.6.0) (2025-04-29)
+
+
+### Features
+
+* change namespace name ([6d5f2ac](https://github.com/rectitude-open/filament-ban-manager/commit/6d5f2ac10d2838059bf66a53ce64ed258575873d))
+
+
+### Bug Fixes
+
+* update condition to prevent job execution for merged pull requests ([d655ae2](https://github.com/rectitude-open/filament-ban-manager/commit/d655ae28aab7c014d4a4406ecb355c8c0f2a3842))
+
 ## [1.5.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.4.0...v1.5.0) (2025-04-29)
 
 
