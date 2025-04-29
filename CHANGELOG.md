@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.3.0...v1.4.0) (2025-04-29)
+
+
+### Features
+
+* add Ban Model to override fillable ([a0de807](https://github.com/rectitude-open/filament-ban-manager/commit/a0de80739be22e6b5d6aa5459418a3d2ece3f018))
+* enhance BanResource table columns with labels, searchability, and formatting ([d22ccd4](https://github.com/rectitude-open/filament-ban-manager/commit/d22ccd4b1ea3148d7437f687b179775b314825cf))
+
+
+### Bug Fixes
+
+* correct syntax for conditional check in Laravel Pint workflow ([e031122](https://github.com/rectitude-open/filament-ban-manager/commit/e0311228cc21d34f4801f19f641cb107663d6b62))
+
 ## [1.3.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.2.2...v1.3.0) (2025-04-29)
 
 
