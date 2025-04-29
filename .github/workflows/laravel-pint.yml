@@ -8,7 +8,7 @@ on:
 
 jobs:
   php-code-styling:
-    if: github.actor != 'github-actions[bot]'
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
 
     steps:
