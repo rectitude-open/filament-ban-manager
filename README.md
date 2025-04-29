@@ -1,8 +1,8 @@
 # Filament Ban Manager
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rectitude-open/filament-ban-manager.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-ban-manager)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/rectitude-open/filament-ban-manager/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/rectitude-open/filament-ban-manager/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/rectitude-open/filament-ban-manager/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/rectitude-open/filament-ban-manager/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
+[![Tests](https://github.com/rectitude-open/filament-ban-manager/actions/workflows/run-tests.yml/badge.svg)](https://github.com/rectitude-open/filament-ban-manager/actions/workflows/run-tests.yml)
+[![PHPStan](https://img.shields.io/badge/PHPStan-level%205-brightgreen)](https://phpstan.org/)
 [![Total Downloads](https://img.shields.io/packagist/dt/rectitude-open/filament-ban-manager.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-ban-manager)
 
 
