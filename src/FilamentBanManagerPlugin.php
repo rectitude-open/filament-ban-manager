@@ -1,10 +1,10 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager;
+namespace RectitudeOpen\FilamentBanManager;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource;
+use RectitudeOpen\FilamentBanManager\Resources\BanResource;
 
 class FilamentBanManagerPlugin implements Plugin
 {

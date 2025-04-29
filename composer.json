@@ -41,13 +41,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Rectitudeopen\\FilamentBanManager\\": "src/",
-            "Rectitudeopen\\FilamentBanManager\\Database\\Factories\\": "database/factories/"
+            "RectitudeOpen\\FilamentBanManager\\": "src/",
+            "RectitudeOpen\\FilamentBanManager\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rectitudeopen\\FilamentBanManager\\Tests\\": "tests/"
+            "RectitudeOpen\\FilamentBanManager\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -67,7 +67,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rectitudeopen\\FilamentBanManager\\FilamentBanManagerServiceProvider"
+                "RectitudeOpen\\FilamentBanManager\\FilamentBanManagerServiceProvider"
             ]
         }
     },

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions;
+namespace RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions;
 
 use Filament\Actions\Concerns\CanCustomizeProcess;
 use Filament\Tables\Actions\Action;

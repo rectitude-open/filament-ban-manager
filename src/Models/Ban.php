@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rectitudeopen\FilamentBanManager\Models;
+namespace RectitudeOpen\FilamentBanManager\Models;
 
 use Mchev\Banhammer\Models\Ban as BaseBan;
 

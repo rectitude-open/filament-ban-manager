@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Rectitudeopen\FilamentBanManager\Resources;
+namespace RectitudeOpen\FilamentBanManager\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Rectitudeopen\FilamentBanManager\Models\Ban;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
+use RectitudeOpen\FilamentBanManager\Models\Ban;
+use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
+use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
+use RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
 
 class BanResource extends Resource
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager\Testing;
+namespace RectitudeOpen\FilamentBanManager\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 

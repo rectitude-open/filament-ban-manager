@@ -1,16 +1,16 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager\Facades;
+namespace RectitudeOpen\FilamentBanManager\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Rectitudeopen\FilamentBanManager\FilamentBanManager
+ * @see \RectitudeOpen\FilamentBanManager\FilamentBanManager
  */
 class FilamentBanManager extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Rectitudeopen\FilamentBanManager\FilamentBanManager::class;
+        return \RectitudeOpen\FilamentBanManager\FilamentBanManager::class;
     }
 }

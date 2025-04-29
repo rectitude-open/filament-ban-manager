@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
+namespace RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
 
 use Filament\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
 use Illuminate\Support\Js;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource;
+use RectitudeOpen\FilamentBanManager\Resources\BanResource;
 
 class ViewBan extends ViewRecord
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager\Tests;
+namespace RectitudeOpen\FilamentBanManager\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
@@ -15,7 +15,7 @@ use Filament\Widgets\WidgetsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Rectitudeopen\FilamentBanManager\FilamentBanManagerServiceProvider;
+use RectitudeOpen\FilamentBanManager\FilamentBanManagerServiceProvider;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 
 class TestCase extends Orchestra
@@ -25,7 +25,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Rectitudeopen\\FilamentBanManager\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'RectitudeOpen\\FilamentBanManager\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

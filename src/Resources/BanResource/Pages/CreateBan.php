@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
+namespace RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource;
+use RectitudeOpen\FilamentBanManager\Resources\BanResource;
 
 class CreateBan extends CreateRecord
 {

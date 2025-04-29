@@ -1,6 +1,6 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager\Database\Factories;
+namespace RectitudeOpen\FilamentBanManager\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

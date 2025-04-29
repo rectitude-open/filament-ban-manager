@@ -1,6 +1,6 @@
 <?php
 
-// translations for Rectitudeopen/FilamentBanManager
+// translations for RectitudeOpen/FilamentBanManager
 return [
     //
 ];

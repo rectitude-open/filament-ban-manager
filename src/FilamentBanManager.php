@@ -1,5 +1,5 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager;
+namespace RectitudeOpen\FilamentBanManager;
 
 class FilamentBanManager {}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager\Commands;
+namespace RectitudeOpen\FilamentBanManager\Commands;
 
 use Illuminate\Console\Command;
 

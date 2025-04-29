@@ -1,6 +1,6 @@
 <?php
 
-namespace Rectitudeopen\FilamentBanManager;
+namespace RectitudeOpen\FilamentBanManager;
 
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
@@ -10,8 +10,8 @@ use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
 use Livewire\Features\SupportTesting\Testable;
-use Rectitudeopen\FilamentBanManager\Commands\FilamentBanManagerCommand;
-use Rectitudeopen\FilamentBanManager\Testing\TestsFilamentBanManager;
+use RectitudeOpen\FilamentBanManager\Commands\FilamentBanManagerCommand;
+use RectitudeOpen\FilamentBanManager\Testing\TestsFilamentBanManager;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

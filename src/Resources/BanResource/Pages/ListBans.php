@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Rectitudeopen\FilamentBanManager\Resources\BanResource\Pages;
+namespace RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Rectitudeopen\FilamentBanManager\Resources\BanResource;
+use RectitudeOpen\FilamentBanManager\Resources\BanResource;
 
 class ListBans extends ListRecords
 {
