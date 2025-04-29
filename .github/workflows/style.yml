@@ -9,7 +9,7 @@ on:
 jobs:
   style-check:
     name: phpstan
-    if: ${{ github.actor != 'github-actions[bot]' }}
+    if: github.event.pull_request.merged != true
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ github.actor }} is testing out GitHub Actions 🚀"
