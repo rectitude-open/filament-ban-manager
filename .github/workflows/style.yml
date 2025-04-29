@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  Style Check:
+  style-check:
     name: phpstan
     if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
