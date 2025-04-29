@@ -53,7 +53,9 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void {}
+    public function packageRegistered(): void
+    {
+    }
 
     public function packageBooted(): void
     {
@@ -81,7 +83,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentBanManager);
+        Testable::mixin(new TestsFilamentBanManager());
     }
 
     protected function getAssetPackageName(): ?string
@@ -141,7 +143,7 @@ class FilamentBanManagerServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_bans_table.php',
+            'create_bans_table',
         ];
     }
 }
