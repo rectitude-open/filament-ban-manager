@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
 use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
@@ -25,7 +26,10 @@ class BanResource extends Resource
         return config('filament-ban-manager.model', Ban::class);
     }
 
-    protected static ?string $navigationIcon = 'heroicon-o-shield-exclamation';
+    public static function getNavigationIcon(): string | Htmlable | null
+    {
+        return static::$navigationIcon ?? config('filament-ban-manager.navigation_icon', 'heroicon-o-shield-exclamation');
+    }
 
     public static function getNavigationSort(): ?int
     {
