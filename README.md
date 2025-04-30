@@ -50,7 +50,7 @@ return [
 
 The package provides a Ban resource that allows you to create and delete bans for both models and IP addresses.
 
-To use the resource page provided by this package, you need to register it in your Panel Provider provider first.
+To use the resource page provided by this package, you need to register it in your Panel Provider first.
 
 ```php
 namespace App\Providers\Filament;
