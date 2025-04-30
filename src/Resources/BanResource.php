@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentBanManager\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
@@ -105,6 +108,30 @@ class BanResource extends Resource
                             'model' => $query->whereNotNull('bannable_type')->whereNotNull('bannable_id'),
                             default => $query,
                         };
+                    }),
+                Filter::make('bannable_type_search')
+                    ->form([
+                        TextInput::make('value')
+                            ->label('Bannable Type (Fuzzy Search)'),
+                    ])
+                    ->query(function (Builder $query, array $data): Builder {
+                        if ($data['value']) {
+                            $query->where('bannable_type', 'like', '%' . $data['value'] . '%');
+                        }
+
+                        return $query;
+                    }),
+                Filter::make('bannable_id')
+                    ->form([
+                        TextInput::make('value')
+                            ->label('Bannable ID'),
+                    ])
+                    ->query(function (Builder $query, array $data): Builder {
+                        if ($data['value']) {
+                            $query->where('bannable_id', $data['value']);
+                        }
+
+                        return $query;
                     }),
             ])
             ->actions([
