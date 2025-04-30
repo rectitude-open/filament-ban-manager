@@ -8,6 +8,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
@@ -91,7 +92,20 @@ class BanResource extends Resource
                 Tables\Columns\TextColumn::make('comment'),
             ])
             ->filters([
-                //
+                SelectFilter::make('bannable_type')
+                    ->label('Type')
+                    ->options([
+                        'ip' => 'IP',
+                        'model' => 'Model',
+                    ])
+                    ->query(function ($query, $filter) {
+                        $value = $filter->getState()['value'] ?? null;
+                        match ($value) {
+                            'ip' => $query->whereNull('bannable_type')->whereNotNull('ip'),
+                            'model' => $query->whereNotNull('bannable_type')->whereNotNull('bannable_id'),
+                            default => $query,
+                        };
+                    }),
             ])
             ->actions([
                 UnbanAction::make(),
