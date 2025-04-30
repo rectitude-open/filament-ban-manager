@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.7.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.6.0...v1.7.0) (2025-04-30)
+
+
+### Features
+
+* add expired_at_date_format ([ceb4b79](https://github.com/rectitude-open/filament-ban-manager/commit/ceb4b79995660a4a670f3a7a86a15f6935d98876))
+* add filters for bannable type and ID ([4117537](https://github.com/rectitude-open/filament-ban-manager/commit/4117537bce73b57474fb3a8439b3016250f0ef9d))
+* add navigation_icon config ([4f33358](https://github.com/rectitude-open/filament-ban-manager/commit/4f33358c3b7bebe1644869b7c343f0b2d9f4ab73))
+* add Type filter ([5b1c55a](https://github.com/rectitude-open/filament-ban-manager/commit/5b1c55a0672c1687b237b55e9455f62572adc15f))
+
+
+### Miscellaneous Chores
+
+* typo fix ([95c83c3](https://github.com/rectitude-open/filament-ban-manager/commit/95c83c362458ec99d6e9a88c3986826be0fe742f))
+
 ## [1.6.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.5.0...v1.6.0) (2025-04-29)
 
 
