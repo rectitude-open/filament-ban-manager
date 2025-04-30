@@ -87,7 +87,7 @@ class BanResource extends Resource
                     ->label('IP')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('expired_at')
-                    ->dateTime(),
+                    ->dateTime(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s')),
                 Tables\Columns\TextColumn::make('comment'),
             ])
             ->filters([
