@@ -18,6 +18,7 @@ use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
+use Filament\Forms\Components\Placeholder;
 
 class BanResource extends Resource
 {
@@ -53,12 +54,13 @@ class BanResource extends Resource
                 Forms\Components\TextInput::make('bannable_type')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('bannable_id'),
-                Forms\Components\TextInput::make('created_by_type')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('created_by_id'),
                 Forms\Components\TextInput::make('ip')
+                    ->label('IP')
                     ->maxLength(45),
-                Forms\Components\DateTimePicker::make('expired_at'),
+                Forms\Components\DateTimePicker::make('expired_at')
+                    ->label('Expired At')
+                    ->format(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s'))
+                    ->displayFormat(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s')),
                 Forms\Components\KeyValue::make('metas')
                     ->label('Metas')
                     ->keyLabel('Key')
@@ -67,6 +69,14 @@ class BanResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('comment')
                     ->columnSpanFull(),
+                Placeholder::make('created_by')
+                    ->label('Created by')
+                    ->content(fn ($record): string => $record->createdBy->name ?? '-')
+                    ->visibleOn(['view']),
+                Placeholder::make('created_at')
+                    ->label('Created at')
+                    ->content(fn ($record): string => $record->created_at?->format(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s')))
+                    ->visibleOn(['view']),
             ]);
     }
 
