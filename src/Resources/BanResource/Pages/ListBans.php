@@ -8,6 +8,7 @@ use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource;
 use Filament\Notifications\Notification;
+use Filament\Facades\Filament;
 
 class ListBans extends ListRecords
 {
@@ -30,6 +31,11 @@ class ListBans extends ListRecords
                         $this->halt();
                         return [];
                     }
+
+                    $user = Filament::auth()->user();
+                    $data['created_by_type'] = $user->getMorphClass();
+                    $data['created_by_id'] = $user->getKey();
+
                     return $data;
                 })
         ];
