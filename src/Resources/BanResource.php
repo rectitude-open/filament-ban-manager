@@ -145,7 +145,8 @@ class BanResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     UnbanBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getRelations(): array
