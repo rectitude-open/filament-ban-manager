@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
 
 use Filament\Actions;
+use Filament\Facades\Filament;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource;
-use Filament\Notifications\Notification;
-use Filament\Facades\Filament;
 
 class ListBans extends ListRecords
 {
@@ -29,6 +29,7 @@ class ListBans extends ListRecords
                             ->title('Bannable Model or IP is required')
                             ->send();
                         $this->halt();
+
                         return [];
                     }
 
@@ -37,7 +38,7 @@ class ListBans extends ListRecords
                     $data['created_by_id'] = $user->getKey();
 
                     return $data;
-                })
+                }),
         ];
     }
 }

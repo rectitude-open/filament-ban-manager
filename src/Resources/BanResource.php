@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentBanManager\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -18,7 +19,6 @@ use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
-use Filament\Forms\Components\Placeholder;
 
 class BanResource extends Resource
 {
