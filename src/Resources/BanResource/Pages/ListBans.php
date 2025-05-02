@@ -7,6 +7,7 @@ namespace RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource;
+use Filament\Notifications\Notification;
 
 class ListBans extends ListRecords
 {
@@ -15,7 +16,22 @@ class ListBans extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->mutateFormDataUsing(function (array $data): array {
+                    if (
+                        (empty($data['bannable_type'] ?? null) || empty($data['bannable_id'] ?? null))
+                        &&
+                        (empty($data['ip'] ?? null))
+                    ) {
+                        Notification::make()
+                            ->warning()
+                            ->title('Bannable Model or IP is required')
+                            ->send();
+                        $this->halt();
+                        return [];
+                    }
+                    return $data;
+                })
         ];
     }
 }
