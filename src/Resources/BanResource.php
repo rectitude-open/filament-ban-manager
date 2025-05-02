@@ -59,8 +59,8 @@ class BanResource extends Resource
                     ->maxLength(45),
                 Forms\Components\DateTimePicker::make('expired_at')
                     ->label('Expired At')
-                    ->format(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s'))
-                    ->displayFormat(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s')),
+                    ->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s'))
+                    ->displayFormat(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')),
                 Forms\Components\KeyValue::make('metas')
                     ->label('Metas')
                     ->keyLabel('Key')
@@ -75,7 +75,7 @@ class BanResource extends Resource
                     ->visibleOn(['view']),
                 Placeholder::make('created_at')
                     ->label('Created at')
-                    ->content(fn ($record): string => $record->created_at?->format(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s')))
+                    ->content(fn ($record): string => $record->created_at?->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')))
                     ->visibleOn(['view']),
             ]);
     }
@@ -105,7 +105,7 @@ class BanResource extends Resource
                     ->label('IP')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('expired_at')
-                    ->dateTime(config('filament-ban-manager.expired_at_date_format', 'Y-m-d H:i:s')),
+                    ->dateTime(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')),
                 Tables\Columns\TextColumn::make('comment'),
             ])
             ->filters([
