@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.8.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.7.0...v1.8.0) (2025-05-02)
+
+
+### Features
+
+* add validation for CreateAction ([c1b2458](https://github.com/rectitude-open/filament-ban-manager/commit/c1b2458de75d131c0166f7ee193cce1d08dd28c2))
+* auto set created_by on creation ([ad2ef50](https://github.com/rectitude-open/filament-ban-manager/commit/ad2ef5087980e3efa77f14e8fc34a603ea5397d6))
+* change created_by display in form ([03c5e4b](https://github.com/rectitude-open/filament-ban-manager/commit/03c5e4bc774ca6789573d58ab5955422e53ea682))
+
+
+### Bug Fixes
+
+* ensure default sort order is applied in BanResource table ([a2b6a20](https://github.com/rectitude-open/filament-ban-manager/commit/a2b6a20fe60f94cb791ac309e42e77e13bd48b22))
+
 ## [1.7.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.6.0...v1.7.0) (2025-04-30)
 
 
