@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.9.0...v1.10.0) (2025-05-04)
+
+
+### Features
+
+* add meta key filter to BanResource table ([3df9a0c](https://github.com/rectitude-open/filament-ban-manager/commit/3df9a0c7d5f89f72ae94d3420e3f1ad61941aebf))
+* add metas fields to BanResource infolist ([4b333a9](https://github.com/rectitude-open/filament-ban-manager/commit/4b333a9f6e8652eb2c4985094e1f69ccb6310928))
+
 ## [1.9.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.8.0...v1.9.0) (2025-05-04)
 
 
