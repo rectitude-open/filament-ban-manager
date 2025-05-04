@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/rectitude-open/filament-ban-manager/compare/v1.10.0...v1.10.1) (2025-05-04)
+
+
+### Miscellaneous Chores
+
+* remove commit message check ([124baf2](https://github.com/rectitude-open/filament-ban-manager/commit/124baf20e4597309cd146e43e48088e5005cb79c))
+
 ## [1.10.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.9.0...v1.10.0) (2025-05-04)
 
 
