@@ -90,6 +90,12 @@ class BanResource extends Resource
                     ->formatStateUsing(function ($state) {
                         return $state ? $state->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')) : '-';
                     }),
+                Infolists\Components\KeyValueEntry::make('metas')
+                    ->label('Metas')
+                    ->columnSpanFull(),
+                Infolists\Components\TextEntry::make('comment')
+                    ->label('Comment')
+                    ->columnSpanFull(),
                 Infolists\Components\TextEntry::make('created_by_type')
                     ->label('Created by')
                     ->formatStateUsing(function ($state, Ban $record) {
@@ -101,8 +107,6 @@ class BanResource extends Resource
                     ->formatStateUsing(function ($state) {
                         return $state ? $state->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')) : '-';
                     }),
-                Infolists\Components\TextEntry::make('comment')
-                    ->label('Comment'),
             ]);
     }
 
