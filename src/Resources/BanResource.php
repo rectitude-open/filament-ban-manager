@@ -56,7 +56,8 @@ class BanResource extends Resource
                 Forms\Components\TextInput::make('bannable_id'),
                 Forms\Components\TextInput::make('ip')
                     ->label('IP')
-                    ->maxLength(45),
+                    ->maxLength(45)
+                    ->rules(['ip']),
                 Forms\Components\DateTimePicker::make('expired_at')
                     ->label('Expired At')
                     ->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s'))
