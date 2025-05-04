@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentBanManager\Resources;
 
 use Filament\Forms;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Infolists;
@@ -178,6 +179,23 @@ class BanResource extends Resource
                     ->query(function (Builder $query, array $data): Builder {
                         if ($data['value']) {
                             $query->where('bannable_id', $data['value']);
+                        }
+
+                        return $query;
+                    }),
+                Filter::make('meta_key')
+                    ->form([
+                        Grid::make(2)
+                            ->schema([
+                                TextInput::make('key')
+                                    ->label('Meta Key'),
+                                TextInput::make('value')
+                                    ->label('Meta Value'),
+                            ]),
+                    ])
+                    ->query(function (Builder $query, array $data): Builder {
+                        if ($data['key'] && $data['value']) {
+                            $query->whereJsonContains('metas->' . $data['key'], $data['value']);
                         }
 
                         return $query;
