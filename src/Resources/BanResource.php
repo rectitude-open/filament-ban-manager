@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentBanManager\Resources;
 
 use Filament\Forms;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Infolists;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\Filter;
@@ -19,8 +20,6 @@ use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
-use Filament\Infolists;
-use Filament\Infolists\Infolist;
 
 class BanResource extends Resource
 {
@@ -132,8 +131,13 @@ class BanResource extends Resource
                     ->label('IP')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('expired_at')
+                    ->label('Expired At')
                     ->dateTime(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')),
-                Tables\Columns\TextColumn::make('comment'),
+                Tables\Columns\TextColumn::make('comment')
+                    ->label('Comment')
+                    ->limit(30)
+                    ->wrap()
+                    ->toggleable(),
             ])
             ->filters([
                 SelectFilter::make('bannable_type')
