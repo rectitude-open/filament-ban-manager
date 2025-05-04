@@ -31,6 +31,8 @@ class UnbanAction extends Action
 
         $this->requiresConfirmation();
 
+        $this->successNotificationTitle(__('Unbanned successfully'));
+
         $this->action(function (): void {
             $this->process(function (array $data, Model $record, Table $table) {
                 /** @phpstan-ignore-next-line */

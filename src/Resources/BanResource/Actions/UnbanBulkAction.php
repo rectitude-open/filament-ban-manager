@@ -31,6 +31,8 @@ class UnbanBulkAction extends BulkAction
 
         $this->requiresConfirmation();
 
+        $this->successNotificationTitle(__('Unbanned successfully'));
+
         $this->action(function (): void {
             $this->process(static function (Collection $records) {
                 $records->each(function (Model $record) {
