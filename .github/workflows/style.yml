@@ -9,15 +9,9 @@ on:
 jobs:
   style-check:
     name: phpstan
-    if: ${{ github.event.pull_request.merged != true }}
+    if: ${{ !(contains(github.event.head_commit.message, 'release')) }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.actor }} is testing out GitHub Actions 🚀"
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Dump github.event context
-        run: echo '${{ toJson(github.event) }}'
-
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
