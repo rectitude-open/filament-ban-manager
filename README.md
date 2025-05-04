@@ -1,3 +1,4 @@
+![Filament Ban Manager Banner](./art/Filament%20Ban%20Manager.png)
 # Filament Ban Manager
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rectitude-open/filament-ban-manager.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-ban-manager)
@@ -43,6 +44,8 @@ return [
     'filament_resource' => RectitudeOpen\FilamentBanManager\Resources\BanResource::class,
     'model' => RectitudeOpen\FilamentBanManager\Models\Ban::class,
     'navigation_sort' => 0,
+    'navigation_icon' => 'heroicon-o-shield-exclamation',
+    'datetime_format' => 'Y-m-d H:i:s',
 ];
 ```
 
