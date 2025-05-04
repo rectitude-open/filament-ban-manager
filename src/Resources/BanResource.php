@@ -19,6 +19,8 @@ use RectitudeOpen\FilamentBanManager\Models\Ban;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Actions\UnbanBulkAction;
 use RectitudeOpen\FilamentBanManager\Resources\BanResource\Pages;
+use Filament\Infolists;
+use Filament\Infolists\Infolist;
 
 class BanResource extends Resource
 {
@@ -70,14 +72,38 @@ class BanResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('comment')
                     ->columnSpanFull(),
-                Placeholder::make('created_by')
+            ]);
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Infolists\Components\TextEntry::make('bannable_type')
+                    ->label('Bannable Type'),
+                Infolists\Components\TextEntry::make('bannable_id')
+                    ->label('Bannable ID'),
+                Infolists\Components\TextEntry::make('ip')
+                    ->label('IP'),
+                Infolists\Components\TextEntry::make('expired_at')
+                    ->dateTime()
+                    ->label('Expired At')
+                    ->formatStateUsing(function ($state) {
+                        return $state ? $state->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')) : '-';
+                    }),
+                Infolists\Components\TextEntry::make('created_by_type')
                     ->label('Created by')
-                    ->content(fn ($record): string => $record->createdBy->name ?? '-')
-                    ->visibleOn(['view']),
-                Placeholder::make('created_at')
+                    ->formatStateUsing(function ($state, Ban $record) {
+                        return $record->createdBy?->name ?? '-';
+                    }),
+                Infolists\Components\TextEntry::make('created_at')
                     ->label('Created at')
-                    ->content(fn ($record): string => $record->created_at?->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')))
-                    ->visibleOn(['view']),
+                    ->dateTime()
+                    ->formatStateUsing(function ($state) {
+                        return $state ? $state->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')) : '-';
+                    }),
+                Infolists\Components\TextEntry::make('comment')
+                    ->label('Comment'),
             ]);
     }
 
@@ -150,6 +176,7 @@ class BanResource extends Resource
                     }),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 UnbanAction::make(),
             ])
             ->bulkActions([
@@ -171,7 +198,6 @@ class BanResource extends Resource
     {
         return [
             'index' => Pages\ListBans::route('/'),
-            'view' => Pages\ViewBan::route('/{record}'),
         ];
     }
 }
