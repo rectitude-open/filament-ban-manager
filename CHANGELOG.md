@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.8.0...v1.9.0) (2025-05-04)
+
+
+### Features
+
+* add infolist schema to BanResource and remove ViewBan page ([a8e1d30](https://github.com/rectitude-open/filament-ban-manager/commit/a8e1d300ecf7ea066131b154050cfa1384052d0c))
+* enhance BanResource table columns with labels and formatting options ([38e9ce3](https://github.com/rectitude-open/filament-ban-manager/commit/38e9ce300b5aa34f8d5b0877ecea630d8dfc3e56))
+* unify success notification title for unban actions ([af2d07d](https://github.com/rectitude-open/filament-ban-manager/commit/af2d07de4c32f77cc2f413179737ee528c8fd48b))
+
+
+### Bug Fixes
+
+* add validation rules for IP input in BanResource form ([6e452fa](https://github.com/rectitude-open/filament-ban-manager/commit/6e452fa0776ff3108ae459b4c5b62068f0f17dc9))
+
 ## [1.8.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.7.0...v1.8.0) (2025-05-02)
 
 
