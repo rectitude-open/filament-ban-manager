@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.2](https://github.com/rectitude-open/filament-ban-manager/compare/v1.10.1...v1.10.2) (2025-05-10)
+
+
+### Miscellaneous Chores
+
+* update dependabot fetch-metadata action to v2.4.0 ([79d6232](https://github.com/rectitude-open/filament-ban-manager/commit/79d62324f6190cae4b55b59c1def383a9f7d0a3e))
+
 ## [1.10.1](https://github.com/rectitude-open/filament-ban-manager/compare/v1.10.0...v1.10.1) (2025-05-04)
 
 
