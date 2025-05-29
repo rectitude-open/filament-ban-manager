@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) rectitude-open <open@rectitude.dev>
+Copyright (c) Rectitude Open <open@rectitude.dev>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
