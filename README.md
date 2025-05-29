@@ -9,6 +9,8 @@
 
 Filament Ban Manager is a user-friendly plugin that provides complete ban management (both models and IPs) for your Filament panel, built on top of the [Banhammer](https://github.com/mchev/banhammer) package.
 
+This package is also a standalone part of a CMS project: [FilaPress](https://github.com/rectitude-open/filapress).
+
 ## Installation
 
 You can install the package via composer:
