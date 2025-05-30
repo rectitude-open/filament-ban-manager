@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.10.3](https://github.com/rectitude-open/filament-ban-manager/compare/v1.10.2...v1.10.3) (2025-05-29)
+
+
+### Miscellaneous Chores
+
+* update esbuild dependency to version 0.25.0 ([5c7e7fc](https://github.com/rectitude-open/filament-ban-manager/commit/5c7e7fc58514f7ebf976154c8e555d97ca91e0f5))
+* update esbuild version ([aa14a3f](https://github.com/rectitude-open/filament-ban-manager/commit/aa14a3f03fceb87bdc519930a564a1506eb8af65))
+* update license and author information in LICENSE.md and composer.json ([11f7854](https://github.com/rectitude-open/filament-ban-manager/commit/11f78540d026fadeb853db686c7a95c1558b4f33))
+
 ## [1.10.2](https://github.com/rectitude-open/filament-ban-manager/compare/v1.10.1...v1.10.2) (2025-05-10)
 
 
