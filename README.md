@@ -51,6 +51,12 @@ return [
 ];
 ```
 
+Optionally, you can publish the translations using
+
+```bash
+php artisan vendor:publish --tag="filament-ban-manager-translations"
+```
+
 ## Usage
 
 The package provides a Ban resource that allows you to create and delete bans for both models and IP addresses.
