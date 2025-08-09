@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.11.0](https://github.com/rectitude-open/filament-ban-manager/compare/v1.10.3...v1.11.0) (2025-08-09)
+
+
+### Features
+
+* add instructions to publish translations in README ([3375330](https://github.com/rectitude-open/filament-ban-manager/commit/3375330a48669ac055d8531f5c7346a87b8da219))
+* add more translations ([3f52450](https://github.com/rectitude-open/filament-ban-manager/commit/3f52450dbb5fd27f2db3dd8e9674686a1c0ec2f5))
+* add navigation badge configuration and update navigation labels ([fee1320](https://github.com/rectitude-open/filament-ban-manager/commit/fee13206f9098991c089d5e0f0314f6f94036392))
+* update labels and notifications to use translation strings in BanResource actions and forms ([039f0a4](https://github.com/rectitude-open/filament-ban-manager/commit/039f0a49a76e7c7f596d6ad83a808ce96e013ef5))
+
 ## [1.10.3](https://github.com/rectitude-open/filament-ban-manager/compare/v1.10.2...v1.10.3) (2025-05-29)
 
 
