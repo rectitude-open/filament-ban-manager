@@ -26,7 +26,7 @@ class ListBans extends ListRecords
                     ) {
                         Notification::make()
                             ->warning()
-                            ->title('Bannable Model or IP is required')
+                            ->title(__('filament-ban-manager::filament-ban-manager.info.bannable_model_or_ip_required'))
                             ->send();
                         $this->halt();
 

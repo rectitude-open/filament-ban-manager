@@ -41,12 +41,24 @@ class BanResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return __('menu.nav_item.ban');
+        return __('filament-ban-manager::filament-ban-manager.nav.label');
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return __('menu.nav_group.security');
+        return __('filament-ban-manager::filament-ban-manager.nav.group');
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return config('filament-ban-manager.navigation_badge', false)
+                ? (string) static::getModel()::count()
+                : '';
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament-ban-manager::filament-ban-manager.resource.label');
     }
 
     public static function form(Form $form): Form
@@ -54,23 +66,26 @@ class BanResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('bannable_type')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.bannable_type'))
                     ->maxLength(255),
-                Forms\Components\TextInput::make('bannable_id'),
+                Forms\Components\TextInput::make('bannable_id')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.bannable_id')),
                 Forms\Components\TextInput::make('ip')
-                    ->label('IP')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.ip'))
                     ->maxLength(45)
                     ->rules(['ip']),
                 Forms\Components\DateTimePicker::make('expired_at')
-                    ->label('Expired At')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.expired_at'))
                     ->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s'))
                     ->displayFormat(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')),
                 Forms\Components\KeyValue::make('metas')
-                    ->label('Metas')
-                    ->keyLabel('Key')
-                    ->valueLabel('Value')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.metas'))
+                    ->keyLabel(__('filament-ban-manager::filament-ban-manager.info.key_label'))
+                    ->valueLabel(__('filament-ban-manager::filament-ban-manager.info.value_label'))
                     ->nullable()
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('comment')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.comment'))
                     ->columnSpanFull(),
             ]);
     }
@@ -80,30 +95,30 @@ class BanResource extends Resource
         return $infolist
             ->schema([
                 Infolists\Components\TextEntry::make('bannable_type')
-                    ->label('Bannable Type'),
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.bannable_type')),
                 Infolists\Components\TextEntry::make('bannable_id')
-                    ->label('Bannable ID'),
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.bannable_id')),
                 Infolists\Components\TextEntry::make('ip')
-                    ->label('IP'),
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.ip')),
                 Infolists\Components\TextEntry::make('expired_at')
                     ->dateTime()
-                    ->label('Expired At')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.expired_at'))
                     ->formatStateUsing(function ($state) {
                         return $state ? $state->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')) : '-';
                     }),
                 Infolists\Components\KeyValueEntry::make('metas')
-                    ->label('Metas')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.metas'))
                     ->columnSpanFull(),
                 Infolists\Components\TextEntry::make('comment')
-                    ->label('Comment')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.comment'))
                     ->columnSpanFull(),
                 Infolists\Components\TextEntry::make('created_by_type')
-                    ->label('Created by')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.created_by'))
                     ->formatStateUsing(function ($state, Ban $record) {
                         return $record->createdBy?->name ?? '-';
                     }),
                 Infolists\Components\TextEntry::make('created_at')
-                    ->label('Created at')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.created_at'))
                     ->dateTime()
                     ->formatStateUsing(function ($state) {
                         return $state ? $state->format(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')) : '-';
@@ -116,7 +131,7 @@ class BanResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('bannable_type')
-                    ->label('Bannable Type')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.bannable_type'))
                     ->searchable()
                     ->toggleable(true)
                     ->default('IP')
@@ -124,29 +139,29 @@ class BanResource extends Resource
                         return $state ? class_basename($state) : 'IP';
                     }),
                 Tables\Columns\TextColumn::make('bannable_id')
-                    ->label('Bannable ID')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.bannable_id'))
                     ->toggleable(true),
                 Tables\Columns\TextColumn::make('created_by_id')
-                    ->label('Created by')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.created_by'))
                     ->searchable()
                     ->formatStateUsing(function ($record) {
                         return $record->createdBy->name ?? '-';
                     }),
                 Tables\Columns\TextColumn::make('ip')
-                    ->label('IP')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.ip'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('expired_at')
-                    ->label('Expired At')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.expired_at'))
                     ->dateTime(config('filament-ban-manager.datetime_format', 'Y-m-d H:i:s')),
                 Tables\Columns\TextColumn::make('comment')
-                    ->label('Comment')
+                    ->label(__('filament-ban-manager::filament-ban-manager.field.comment'))
                     ->limit(30)
                     ->wrap()
                     ->toggleable(),
             ])
             ->filters([
                 SelectFilter::make('bannable_type')
-                    ->label('Type')
+                    ->label(__('filament-ban-manager::filament-ban-manager.filter.type'))
                     ->options([
                         'ip' => 'IP',
                         'model' => 'Model',
@@ -162,7 +177,7 @@ class BanResource extends Resource
                 Filter::make('bannable_type_search')
                     ->form([
                         TextInput::make('value')
-                            ->label('Bannable Type (Fuzzy Search)'),
+                            ->label(__('filament-ban-manager::filament-ban-manager.filter.bannable_type_fuzzy')),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         if ($data['value']) {
@@ -174,7 +189,7 @@ class BanResource extends Resource
                 Filter::make('bannable_id')
                     ->form([
                         TextInput::make('value')
-                            ->label('Bannable ID'),
+                            ->label(__('filament-ban-manager::filament-ban-manager.field.bannable_id')),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         if ($data['value']) {
@@ -188,9 +203,9 @@ class BanResource extends Resource
                         Grid::make(2)
                             ->schema([
                                 TextInput::make('key')
-                                    ->label('Meta Key'),
+                                    ->label(__('filament-ban-manager::filament-ban-manager.info.key_label')),
                                 TextInput::make('value')
-                                    ->label('Meta Value'),
+                                    ->label(__('filament-ban-manager::filament-ban-manager.info.value_label')),
                             ]),
                     ])
                     ->query(function (Builder $query, array $data): Builder {

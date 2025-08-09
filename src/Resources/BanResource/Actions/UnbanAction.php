@@ -23,7 +23,7 @@ class UnbanAction extends Action
     {
         parent::setUp();
 
-        $this->label(__('Unban'));
+        $this->label(__('filament-ban-manager::filament-ban-manager.button.unban'));
 
         $this->icon('heroicon-o-x-circle');
 
@@ -31,7 +31,7 @@ class UnbanAction extends Action
 
         $this->requiresConfirmation();
 
-        $this->successNotificationTitle(__('Unbanned successfully'));
+        $this->successNotificationTitle(__('filament-ban-manager::filament-ban-manager.info.unbanned_successfully'));
 
         $this->action(function (): void {
             $this->process(function (array $data, Model $record, Table $table) {
