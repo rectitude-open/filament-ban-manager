@@ -41,12 +41,19 @@ class BanResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return __('menu.nav_item.ban');
+        return __('filament-ban-manager::filament-ban-manager.nav.label');
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return __('menu.nav_group.security');
+        return __('filament-ban-manager::filament-ban-manager.nav.group');
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return config('filament-ban-manager.navigation_badge', false)
+                ? (string) static::getModel()::count()
+                : '';
     }
 
     public static function form(Form $form): Form
